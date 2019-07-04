@@ -10,7 +10,9 @@
     "test": "npm run lint",
     "lint": "eslint ./src",
     "link-all": "wsrun --serial link",
-    "unlink-all": "wsrun --serial unlink"
+    "unlink-all": "wsrun --serial unlink",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "openui5",
@@ -71,5 +73,9 @@
   },
   "workspaces": [
     "src/!(testsuite-utils)"
-  ]
+  ],
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.189.0"
+  }
 }
